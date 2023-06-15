@@ -1,1 +1,9 @@
-# A user accunt api with view for displaying users
+# A user account API with a view for displaying users
+  -POST returns JSON with JWT Token /login
+  -GET return user in JSON format /users/{id}
+  -GET return all users in JSON format /users?page=0&size=5&sortBy=id
+  -POST add a new user to db (requires JSON body) /users/new
+  -PUT update a user in db (requires JSON body) /users/{id}/update
+  -GET returns a view with a table of all users /view/users?page=0&size=5&sortBy=id
+  -GET returns a view of a selected user /view/users/{id}?page=0&size=5&sortBy=id
+  
