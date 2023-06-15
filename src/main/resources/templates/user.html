@@ -1,0 +1,13 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User</title>
+</head>
+<body>
+
+Username <td th:text="${user.getUsername}"></td> <br>
+Crated On <td th:text="${user.getCreatedAt()}"></td> <br>
+First Name <td th:text="${user.getFirstName()}"></td> <br>
+Last Name <td th:text="${user.getLastName()}"></td> <br>
+Roles <td th:text="${user.getRoles()}"></td> <br>
+</body>
+</html>
