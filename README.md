@@ -10,4 +10,4 @@ with a view for displaying users
 <h3> requirements </h3>
 -Install PostgreSQL
 <br>  -Start the PostgreSQL server
-<br>  -Create a DB named user-app
+<br>  -Create a DB named user-app within PostgreSQL
