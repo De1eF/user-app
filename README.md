@@ -1,5 +1,6 @@
-# A user account API with a view for displaying users
-  -POST returns JSON with JWT Token /login
+# A user account API
+with a view for displaying users
+<br>  -POST returns JSON with JWT Token /login
 <br>  -GET return user in JSON format /users/{id}
 <br>  -GET return all users in JSON format /users?page=0&size=5&sortBy=id
 <br>  -POST add a new user to db (requires JSON body) /users/new
