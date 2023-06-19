@@ -9,6 +9,8 @@ with a view for displaying users
 <br>  -GET returns a view with a table of all users /view/users?page=0&size=5&sortBy=id
 <br>  -GET returns a view of a selected user /view/users/{id}?page=0&size=5&sortBy=id 
 <h3> Requirements </h3>
--Install PostgreSQL
-<br>  -Start the PostgreSQL server
-<br>  -Create a DB named user-app within PostgreSQL
+   -JAVA 17
+<br>  -Gradle 7.6.1
+<br>  -Installed PostgreSQL
+<br>  -Started the PostgreSQL server
+<br>  -A DB named user-app created within PostgreSQL
