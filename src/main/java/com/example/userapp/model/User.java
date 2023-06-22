@@ -10,17 +10,21 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import java.time.LocalDateTime;
 import java.util.Set;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "users")
 @Getter
 @Setter
+@ToString
 @EqualsAndHashCode
 public class User {
     @Id
@@ -42,7 +46,8 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Status status;
     @Column(name = "created_at")
-    private String createdAt;
+    private LocalDateTime createdAt;
+    @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @ManyToMany
     @JoinTable(name = "users_roles",
@@ -54,4 +59,10 @@ public class User {
         ACTIVE,
         INACTIVE
     }
+
+    @PrePersist
+    public void prePersist() {
+        createdAt = LocalDateTime.now();
+    }
+
 }

@@ -1,8 +1,6 @@
 package com.example.userapp.controller;
 
-import com.example.userapp.dto.mapper.UserMapper;
 import lombok.AllArgsConstructor;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +11,6 @@ import org.springframework.web.servlet.ModelAndView;
 @AllArgsConstructor
 public class ViewController {
     private UserController userController;
-    private UserMapper userMapper;
 
     @RequestMapping("/view/users")
     public ModelAndView allUsers(@RequestParam(defaultValue = "5") Integer count,
@@ -26,11 +23,10 @@ public class ViewController {
     }
 
     @RequestMapping("/view/users/{id}")
-    public ModelAndView User(Authentication auth,
-                             @PathVariable Long id) {
+    public ModelAndView User(@PathVariable Long id) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("user");
-        modelAndView.addObject("user", userController.getById(auth, id));
+        modelAndView.addObject("user", userController.getById(id));
         return modelAndView;
     }
 }

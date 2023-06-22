@@ -4,7 +4,6 @@ import com.example.userapp.dto.request.UserRequestDto;
 import com.example.userapp.dto.response.RoleResponseDto;
 import com.example.userapp.dto.response.UserResponseDto;
 import com.example.userapp.model.User;
-import com.example.userapp.model.UserRole;
 import java.util.HashSet;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +22,6 @@ public class UserMapper {
         userResponseDto.setFirstName(user.getFirstName());
         userResponseDto.setLastName(user.getLastName());
         userResponseDto.setStatus(user.getStatus().name());
-        userResponseDto.setCreatedAt(user.getCreatedAt());
         List<RoleResponseDto> roles = user.getRoles()
                 .stream()
                 .map(roleMapper::mapToDto)
@@ -32,7 +30,7 @@ public class UserMapper {
         return userResponseDto;
     }
 
-    public User mapToModel(UserRequestDto requestDto, String createdAt) {
+    public User mapToModel(UserRequestDto requestDto) {
         User user = new User();
         user.setUsername(requestDto.getUsername());
         user.setPassword(requestDto.getPassword());
@@ -40,7 +38,6 @@ public class UserMapper {
         user.setLastName(requestDto.getLastName());
         user.setRoles(new HashSet<>());
         user.setStatus(User.Status.ACTIVE);
-        user.setCreatedAt(createdAt);
         return user;
     }
 }

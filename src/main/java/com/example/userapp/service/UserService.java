@@ -12,7 +12,7 @@ public interface UserService {
 
     Optional<User> findByEmail(String email);
 
-    Optional<User> findById(Long id);
+    User findById(Long id);
 
     List<User> findAll(PageRequest pageRequest);
 }

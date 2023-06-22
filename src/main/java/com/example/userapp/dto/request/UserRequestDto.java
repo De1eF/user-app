@@ -14,6 +14,7 @@ public class UserRequestDto {
     @NotBlank
     @Length(min = 3, max = 16)
     @Pattern(regexp = "\\w+")
+    @Pattern(regexp = "[0-9]")
     private String password;
     @NotBlank
     @Length(min = 1, max = 16)
