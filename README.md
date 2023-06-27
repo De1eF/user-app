@@ -1,5 +1,5 @@
-# A user account API
-with a view for displaying users
+# User service app
+A User account API with a view for displaying users
 <h3> How to run </h3>
    -Have JDK 17 installed and configured
 <br>  -Have PostgreSQL Server installed and started
