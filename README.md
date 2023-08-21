@@ -3,7 +3,7 @@ A User account API with a view for displaying users
 <h3> How to run </h3>
    -Have JDK 17 installed and configured
 <br>  -Have PostgreSQL Server installed and started
-<br>  -Heve a schema created in PostgreSQL with the name "user-app"
+<br>  -Have a schema created in PostgreSQL with the name "user-app"
 <br>  -Make a fork from this repository and launch it with an IDE of your choice
 <h3> Views </h3>
    /view/users - displays info about all users (with paging)
