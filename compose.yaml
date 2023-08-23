@@ -3,7 +3,7 @@ services:
     image: 'postgres:latest'
     environment:
       - 'POSTGRES_DB=user-app'
-      - 'POSTGRES_PASSWORD=Alp5K$gR70CC'
+      - 'POSTGRES_PASSWORD='
       - 'POSTGRES_USER=postgres'
     ports:
       - '5432'
